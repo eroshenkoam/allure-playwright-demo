@@ -16,3 +16,10 @@ jobs:
         npm install
         npx playwright install
     - run: npx playwright test
+    - run: npx allure awesome allure-results
+      if: always()
+    - uses: actions/upload-artifact@v4
+      with:
+        name: index.html
+        path: allure-report/plugin-awesome/index.html
+      if: always()
