@@ -16,7 +16,7 @@ jobs:
         npm install
         npx playwright install
     - run: npx playwright test
-    - run: npx allure awesome allure-results
+    - run: npx allure awesome allure-results --single-file
       if: always()
     - uses: actions/upload-artifact@v4
       with:
