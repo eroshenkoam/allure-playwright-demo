@@ -12,10 +12,17 @@ jobs:
       with:
         node-version: 20
         cache: 'npm'
+    - uses: allure-framework/setup-allurectl@v1
+      with:
+        allure-endpoint: https://demo.testops.cloud
+        allure-token: ${{ secrets.ALLURE_TOKEN }}
+        allure-project-id: 3892
     - run: | 
         npm install
         npx playwright install
-    - run: npx playwright test
+    - run: allurectl watch -- npx playwright test
+      env:
+        ALLURE_RESULTS: allure-results
     - run: npx allure awesome allure-results --single-file
       if: always()
     - uses: actions/upload-artifact@v4
