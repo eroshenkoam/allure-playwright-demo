@@ -1,0 +1,13 @@
+# Node
+node_modules/
+
+# Allure
+.allure
+/allure-results/
+/allure-report/
+/attachments/
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
