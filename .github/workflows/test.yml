@@ -16,7 +16,7 @@ jobs:
           npx playwright install
       - run: npm test
       - run: |
-          npx install -G allure
+          npm install -G allure
           npx allure log ./allure-results
           npx allure awesome --single-file ./allure-results
         if: always()
