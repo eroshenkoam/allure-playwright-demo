@@ -13,7 +13,7 @@ test("allure test", async ({page}) => {
 
     await test.step("Open main page", async () => {
         await page.goto("https://playwright.dev/");
-        await allure.attachment("text attachment", "something.txt", "text/plain")
+        await allure.attachment("something.txt", "text attachment", "text/plain")
     })
     await test.step("Click on 'Get started' link", async () => {
         await page.getByRole('link', {name: 'Get started'}).click()

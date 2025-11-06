@@ -6,6 +6,7 @@ const config: PlaywrightTestConfig = {
   testDir: "./test",
   reporter: [
     ["list"],
+    ["html", { outputFolder: "./playwright-report" }],
     [
       "allure-playwright",
       {
@@ -24,7 +25,6 @@ const config: PlaywrightTestConfig = {
       },
     },
   ],
-  outputDir: "test-results/",
 };
 
 export default config;
