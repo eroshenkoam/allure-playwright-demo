@@ -4,18 +4,6 @@ import { devices } from "@playwright/test";
 const config: PlaywrightTestConfig = {
   timeout: 5000,
   testDir: "./test",
-  reporter: [
-    ["list"],
-    [
-      "allure-playwright",
-      {
-        outputFolder: "./out/allure-results",
-        environmentInfo: {
-          node_version: process.version,
-        },
-      },
-    ],
-  ],
   projects: [
     {
       name: "chromium",
