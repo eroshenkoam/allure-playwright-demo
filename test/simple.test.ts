@@ -14,7 +14,7 @@ test("simple test", async ({page}) => {
     })
 
     await test.step("Click on Get started button", async () => {
-        await page.getByRole("link", {"name": "Get started"}).click();
+        await page.getByRole("link", {"name": "Getstarted"}).click();
     })
 
     await test.step("Page header should be Installation", async () => {

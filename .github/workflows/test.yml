@@ -18,4 +18,10 @@ jobs:
       - run: |
           npx install -G allure
           npx allure log ./allure-results
+          npx allure awesome --single-file ./allure-results
+        if: always()
+      - uses: actions/upload-artifact@v4
+        with:
+          name: index.html
+          path: allure-report/index.html
         if: always()
